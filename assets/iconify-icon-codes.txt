@@ -1,0 +1,22 @@
+-Iconify framework:
+<script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
+
+Squirrel Icon
+-Iconify Image:
+<span class="iconify" data-icon="codicon:squirrel"></span>
+
+-CSS Code
+content: url('https://api.iconify.design/codicon/squirrel.svg');
+
+Acorn Icon
+-Iconify Image:
+<span class="iconify" data-icon="fxemoji:acorn"></span>
+
+-CSS Code
+content: url('https://api.iconify.design/fxemoji/acorn.svg');
+
+
+
+
+
+
