@@ -2,7 +2,8 @@
 body,
 ul,
 p,
-li {
+li,
+header {
   margin: 0;
 }
 
@@ -15,7 +16,10 @@ header {
   display: flex;
   justify-content: space-between;
   position: fixed;
-  width: 100vh;
+  top: 0px;
+  background-color: #62350c;
+  padding: 25px;
+  z-index: 1;
 }
 h1 {
   display: flex;
@@ -30,16 +34,19 @@ h1 {
   align-items: center;
 }
 .green-bar {
+  display: flex;
   position: fixed;
   height: 100%;
   width: 8px;
+  top: 0;
   background-color: #069e2d;
   z-index: 2;
 }
 img {
-  width: 200px;
-  height: 200px;
+  width: 125px;
+  height: 125px;
   object-fit: cover;
+  padding: 20px;
 }
 .squirrel-icon {
 }
@@ -51,15 +58,18 @@ img {
 .cart-icon {
 }
 ul {
+  display: flex;
+  flex-wrap: wrap;
   margin: 0;
 }
 li {
   list-style: none;
 }
 .item-container {
-  position: absolute;
+  margin-left: 35px;
+  margin-top: 50%;
   width: 425px;
-  height: 845px;
+  height: 100%;
   left: 38px;
   top: 144px;
   background: #d1d5de;
