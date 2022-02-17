@@ -1,4 +1,68 @@
+/* resets */
+body,
+ul,
+p,
+li {
+  margin: 0;
+}
+
+body {
+  background-color: #62350c;
+  z-index: 1;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  position: fixed;
+  width: 100vh;
+}
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+.text-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.green-bar {
+  position: fixed;
+  height: 100%;
+  width: 8px;
+  background-color: #069e2d;
+  z-index: 2;
+}
 img {
   width: 200px;
   height: 200px;
+  object-fit: cover;
+}
+.squirrel-icon {
+}
+.brackets {
+  font-size: 200%;
+}
+.brackets-logo {
+}
+.cart-icon {
+}
+ul {
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+.item-container {
+  position: absolute;
+  width: 425px;
+  height: 845px;
+  left: 38px;
+  top: 144px;
+  background: #d1d5de;
+  border-radius: 50px;
+  z-index: 0;
 }
