@@ -15,8 +15,22 @@ Acorn Icon
 -CSS Code
 content: url('https://api.iconify.design/fxemoji/acorn.svg');
 
+Berry Icon 
+-Iconify Image:
+<span class="iconify" data-icon="cib:raspberry-pi"></span>
+content: url('https://api.iconify.design/cib/raspberry-pi.svg');
 
+Tree Icon:
+-Iconify Image:
+<span class="iconify" data-icon="bi:tree"></span>
+content: url('https://api.iconify.design/bi/tree.svg');
 
+Nut Icon:
+Iconify Image:
+<span class="iconify" data-icon="fa-brands:nutritionix"></span>
+content: url('https://api.iconify.design/fa-brands/nutritionix.svg');
 
-
-
+Cart Icon:
+Iconify Image:
+<span class="iconify" data-icon="fa-solid:shopping-cart"></span>
+content: url('https://api.iconify.design/fa-solid/shopping-cart.svg');
