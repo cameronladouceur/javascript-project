@@ -34,7 +34,20 @@
       <section class="item-container">
         <ul class="image-list"></ul>
       </section>
-      <img src="" alt="" />
+      <div class="checkout-container">
+        <div class="checkout-images"></div>
+        <form class="checkout-popup">
+          <label for="subTotal">Subtotal</label>
+          <input type="number" name="subTotal" id="subTotal" />
+          <label for="Total">Total</label>
+          <input type="number" name="total" id="total" />
+          <input type="checkbox" name="credit" id="credit" />
+          <label for="credit">Credit</label>
+          <input type="checkbox" name="cash" id="cash" />
+          <label for="cash">Cash</label>
+          <button>Place Order</button>
+        </form>
+      </div>
     </main>
     <script src="/script.js"></script>
   </body>

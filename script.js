@@ -84,22 +84,68 @@ const items = [
     alt: "Sunflowers",
   },
 ];
-
+const cart = [];
 const imageContainer = document.querySelector(".image-list");
-items.forEach((item) => {
-  const newItem = document.createElement("li");
-  const nameParagraph = document.createElement("p");
-  const priceParagraph = document.createElement("p");
-  const productImage = document.createElement("img");
-  newItem.classList.add("product", item.type);
-  nameParagraph.textContent = item.name;
-  priceParagraph.textContent = item.price;
-  productImage.setAttribute("src", item.image);
-  productImage.setAttribute("alt", item.alt);
-  newItem.append(nameParagraph, priceParagraph, productImage);
-  imageContainer.append(newItem);
+const checkoutImages = document.querySelector(".checkout-images");
+const addToCart = document.querySelector("header");
+
+const displayItems = (array, container) => {
+  array.forEach((item, index) => {
+    const newItem = document.createElement("li");
+    const nameParagraph = document.createElement("p");
+    const priceParagraph = document.createElement("p");
+
+    const productImage = document.createElement("img");
+    newItem.classList.add("cart-product", item.type);
+    newItem.dataset.index = index;
+    nameParagraph.textContent = item.name;
+    priceParagraph.textContent = item.price;
+
+    productImage.setAttribute("src", item.image);
+    productImage.setAttribute("alt", item.alt);
+    newItem.append(nameParagraph, priceParagraph, productImage);
+    container.append(newItem);
+  });
+};
+
+displayItems(items, imageContainer);
+
+imageContainer.addEventListener("click", (e) => {
+  if (e.target.parentNode.localName === "li") {
+    const index = e.target.parentNode.dataset.index;
+    cart.push(items[index]);
+    console.log(cart);
+  }
 });
+
+addToCart.addEventListener("click", (e) => {
+  if (e.target.classList.contains("cart-icon") || e.target.tagName === "path") {
+    checkoutImages.innerHTML = "";
+    displayItems(cart, checkoutImages);
+  }
+  console.dir(e.target);
+});
+//when list item is clicked, find item and put it in your cart
 
 // const img = document.createElement()
 // MORE CODE NEEDED BTWN 84-92 TO ADD CLASSES, ECT
 // ADD BUTTONS TO JS
+
+// console.dir(e.target.parentNode);
+// console.log(index);
+
+// cart.forEach((item) => {
+//   const newItem2 = document.createElement("li");
+//   const nameParagraph2 = document.createElement("p");
+//   const priceParagraph2 = document.createElement("p");
+//   // const removalIcon = document.createElement("p")
+//   const productImage2 = document.createElement("img");
+//   newItem2.classList.add("cart-product", item.type);
+//   newItem2.dataset.index = index;
+//   nameParagraph2.textContent = item.name;
+//   priceParagraph2.textContent = item.price;
+
+//   productImage2.setAttribute("src", item.image);
+//   productImage2.setAttribute("alt", item.alt);
+
+// const removalIcon = document.createElement("p")
