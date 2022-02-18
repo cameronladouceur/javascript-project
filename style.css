@@ -49,6 +49,7 @@ img {
   padding: 20px;
 }
 .squirrel-icon {
+  color: #d1d5de;
 }
 .brackets {
   font-size: 200%;
@@ -56,6 +57,7 @@ img {
 .brackets-logo {
 }
 .cart-icon {
+  color: #d1d5de;
 }
 ul {
   display: flex;
@@ -75,4 +77,12 @@ li {
   background: #d1d5de;
   border-radius: 50px;
   z-index: 0;
+}
+
+.checkout-container {
+  height: 100vh;
+}
+
+.cart-icon {
+  padding: 20px;
 }
