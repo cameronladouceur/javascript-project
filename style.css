@@ -80,7 +80,16 @@ li {
 }
 
 .checkout-container {
-  height: 100vh;
+  height: 100%;
+  background-color: #069e2d;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  display: none;
+}
+
+.hide {
+  display: none;
 }
 
 .cart-icon {

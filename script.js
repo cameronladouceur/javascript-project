@@ -1,21 +1,21 @@
 const items = [
   {
     name: "acorn",
-    price: 2.5,
+    price: 1,
     type: "nut",
     image: "assets/acorn.jpg",
     alt: "Acorn",
   },
   {
     name: "almond",
-    price: 2.5,
+    price: 1.5,
     type: "nut",
     image: "assets/almond.jpg",
     alt: "Almond",
   },
   {
     name: "attic",
-    price: 2.5,
+    price: 2,
     type: "living",
     image: "assets/attic.jpg",
     alt: "Attic",
@@ -29,56 +29,56 @@ const items = [
   },
   {
     name: "birdfeeder",
-    price: 2.5,
+    price: 3,
     type: "living",
     image: "assets/birdfeeder.jpg",
     alt: "Birdfeeder",
   },
   {
     name: "branch",
-    price: 2.5,
+    price: 3.5,
     type: "living",
     image: "assets/branch.jpg",
     alt: "Branch",
   },
   {
     name: "cherries",
-    price: 2.5,
+    price: 4,
     type: "berries",
     image: "assets/cherries.jpg",
     alt: "Cherries",
   },
   {
     name: "garbage",
-    price: 2.5,
+    price: 4.5,
     type: "living",
     image: "assets/garbage.jpg",
     alt: "Garbage",
   },
   {
     name: "hazelnut",
-    price: 2.5,
+    price: 5,
     type: "nut",
     image: "assets/hazelnut.jpg",
     alt: "Hazelnut",
   },
   {
     name: "hibernation",
-    price: 2.5,
+    price: 5.5,
     type: "living",
     image: "assets/hibernation.jpg",
     alt: "Hibernation",
   },
   {
     name: "pecan",
-    price: 2.5,
+    price: 6,
     type: "nut",
     image: "assets/pecan.jpg",
     alt: "Pecan",
   },
   {
     name: "sunflowers",
-    price: 2.5,
+    price: 6.5,
     type: "nut",
     image: "assets/sunflowers.jpg",
     alt: "Sunflowers",
@@ -87,7 +87,13 @@ const items = [
 const cart = [];
 const imageContainer = document.querySelector(".image-list");
 const checkoutImages = document.querySelector(".checkout-images");
+const checkoutContainer = document.querySelector(".checkout-container");
 const addToCart = document.querySelector("header");
+const cartIcon = document.querySelector(".cart.icon");
+const paragraphSubtotal = document.querySelector(".subtotal");
+const paragraphTotal = document.querySelector(".total");
+let subtotal = 0;
+let total = 0;
 
 const displayItems = (array, container) => {
   array.forEach((item, index) => {
@@ -106,6 +112,8 @@ const displayItems = (array, container) => {
     newItem.append(nameParagraph, priceParagraph, productImage);
     container.append(newItem);
   });
+  // const checkoutPage = document.querySelector(".checkout-container");
+  // checkoutPage.setAttribute("class", "hide");
 };
 
 displayItems(items, imageContainer);
@@ -121,10 +129,15 @@ imageContainer.addEventListener("click", (e) => {
 addToCart.addEventListener("click", (e) => {
   if (e.target.classList.contains("cart-icon") || e.target.tagName === "path") {
     checkoutImages.innerHTML = "";
+    checkoutContainer.style.display = "block";
     displayItems(cart, checkoutImages);
+    cart.forEach((item) => {
+      subtotal += item.price;
+    });
+    console.log(subtotal);
   }
-  console.dir(e.target);
 });
+
 //when list item is clicked, find item and put it in your cart
 
 // const img = document.createElement()
@@ -133,19 +146,3 @@ addToCart.addEventListener("click", (e) => {
 
 // console.dir(e.target.parentNode);
 // console.log(index);
-
-// cart.forEach((item) => {
-//   const newItem2 = document.createElement("li");
-//   const nameParagraph2 = document.createElement("p");
-//   const priceParagraph2 = document.createElement("p");
-//   // const removalIcon = document.createElement("p")
-//   const productImage2 = document.createElement("img");
-//   newItem2.classList.add("cart-product", item.type);
-//   newItem2.dataset.index = index;
-//   nameParagraph2.textContent = item.name;
-//   priceParagraph2.textContent = item.price;
-
-//   productImage2.setAttribute("src", item.image);
-//   productImage2.setAttribute("alt", item.alt);
-
-// const removalIcon = document.createElement("p")
