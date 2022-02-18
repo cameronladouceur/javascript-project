@@ -43,9 +43,38 @@
           <label for="credit">Credit</label>
           <input type="checkbox" name="cash" id="cash" />
           <label for="cash">Cash</label>
-          <button>Place Order</button>
+          <button class="order-button">Place Order</button>
         </form>
       </div>
+      <div class="credit-container">
+        <form class="credit-popup">
+          <p class="subtotal">Subtotal</p>
+          <p class="total">Total</p>
+          <input
+            type="text"
+            name="cc-number"
+            id="cc-number"
+            placeholder="Please enter CC#"
+          />
+          <label for="cc-number">Credit Card Number</label>
+          <input
+            type="text"
+            name="exp-date"
+            id="exp-date"
+            placeholder="Please enter expiration date"
+          />
+          <label for="exp-date">Expiration Date</label>
+          <input
+            type="text"
+            name="cv-code"
+            id="cv-code"
+            placeholder="Please enter CV code"
+          />
+          <label for="cv-code">CV Code</label>
+          <button class="order-button">Place Order</button>
+        </form>
+      </div>
+      <div class="receipt-page"></div>
     </main>
     <script src="/script.js"></script>
   </body>
