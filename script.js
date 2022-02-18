@@ -92,6 +92,8 @@ const addToCart = document.querySelector("header");
 const cartIcon = document.querySelector(".cart.icon");
 const paragraphSubtotal = document.querySelector(".subtotal");
 const paragraphTotal = document.querySelector(".total");
+const creditContainer = document.querySelector(".credit-container");
+const receiptPage = document.querySelector("receipt-page");
 let subtotal = 0;
 let total = 0;
 
@@ -134,7 +136,37 @@ addToCart.addEventListener("click", (e) => {
     cart.forEach((item) => {
       subtotal += item.price;
     });
-    console.log(subtotal);
+    total = subtotal * 1.06;
+    paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
+  }
+});
+
+checkoutContainer.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("checkout-popup")) {
+    console.log(e.target);
+    creditContainer.style.display = "block";
+    cart.forEach((item) => {
+      subtotal += item.price;
+    });
+    total = subtotal * 1.06;
+    paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
+  }
+});
+
+creditContainer.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (e.target.classList.contains("credit-form")) {
+    console.log(e.target);
+    receiptPage.style.display = "block";
+    cart.forEach((item) => {
+      subtotal += item.price;
+    });
+    total = subtotal * 1.06;
+    paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
   }
 });
 
