@@ -92,8 +92,10 @@ const addToCart = document.querySelector("header");
 const cartIcon = document.querySelector(".cart.icon");
 const paragraphSubtotal = document.querySelector(".subtotal");
 const paragraphTotal = document.querySelector(".total");
+const finishedCheckOut = document.querySelector("main");
 const creditContainer = document.querySelector(".credit-container");
-const receiptPage = document.querySelector("receipt-page");
+const receiptPage = document.querySelector(".receipt-page");
+
 let subtotal = 0;
 let total = 0;
 
@@ -168,6 +170,27 @@ creditContainer.addEventListener("submit", (e) => {
     paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
     paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
   }
+});
+
+finishedCheckOut.addEventListener("click", (e) => {
+  if (e.target.classList.contains("finish-checkout")) {
+    console.log(e.target);
+    checkoutImages.innerHTML = "";
+    // receiptPage.setAttribute("hidden", item.alt);
+    // creditContainer.setAttribute("hidden", item.alt);
+    // checkoutContainer.setAttribute("hidden", item.alt);
+    receiptPage.style.display = "none";
+    creditContainer.style.display = "none";
+    checkoutContainer.style.display = "none";
+    displayItems(cart, checkoutImages);
+    cart.forEach((item) => {
+      subtotal += item.price;
+    });
+    total = subtotal * 1.06;
+    paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
+  }
+  console.log(e.target);
 });
 
 //when list item is clicked, find item and put it in your cart
