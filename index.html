@@ -5,6 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;600&display=swap"
+      rel="stylesheet"
+    />
+
     <script src="https://code.iconify.design/2/2.1.2/iconify.min.js"></script>
     <title>Group Project</title>
   </head>
@@ -39,10 +46,12 @@
         <form class="checkout-popup">
           <p class="subtotal">Subtotal</p>
           <p class="total">Total</p>
-          <input type="checkbox" name="credit" id="credit" />
-          <label for="credit">Credit</label>
-          <input type="checkbox" name="cash" id="cash" />
-          <label for="cash">Cash</label>
+          <div>
+            <input type="radio" name="credit-or-cash" id="credit" checked />
+            <label for="credit">Credit</label>
+            <input type="radio" name="credit-or-cash" id="cash" />
+            <label for="cash">Cash</label>
+          </div>
           <button class="order-button">Place Order</button>
         </form>
       </div>
@@ -50,28 +59,35 @@
         <form class="credit-popup">
           <p class="subtotal">Subtotal</p>
           <p class="total">Total</p>
-          <input
-            type="text"
-            name="cc-number"
-            id="cc-number"
-            placeholder="Please enter CC#"
-          />
-          <label for="cc-number">Credit Card Number</label>
-          <input
-            type="text"
-            name="exp-date"
-            id="exp-date"
-            placeholder="Please enter expiration date"
-          />
-          <label for="exp-date">Expiration Date</label>
-          <input
-            type="text"
-            name="cv-code"
-            id="cv-code"
-            placeholder="Please enter CV code"
-          />
-          <label for="cv-code">CV Code</label>
-          <button class="order-button">Place Order</button>
+          <div class="credit-input-container">
+            <input
+              type="text"
+              name="cc-number"
+              id="cc-number"
+              placeholder="Please enter CC#"
+            />
+            <label for="cc-number">Credit Card Number</label>
+            <input type="month" name="exp-date" id="exp-date" />
+            <label for="exp-date">Expiration Date</label>
+            <input
+              type="text"
+              name="cv-code"
+              id="cv-code"
+              placeholder="Please enter CV code"
+            />
+            <label for="cv-code">CV Code</label>
+          </div>
+          <div class="cash-input-container">
+            <p class="change">Cash</p>
+            <input
+              class="change-input"
+              type="text"
+              name="change"
+              id="change"
+              placeholder="Enter Cash Amount"
+            />
+          </div>
+          <button class="payment-button">Submit Payment</button>
         </form>
       </div>
       <div class="receipt-page">
@@ -79,8 +95,9 @@
         <div class="lineitems-container"></div>
         <p class="subtotal">Subtotal</p>
         <p class="total">Total</p>
+        <p class="change-final">Your change is</p>
         <p class="thank-you-receipt">Thank you for your purchase</p>
-        <p class="finish-checkout">Finish Checkout</p>
+        <button class="finish-checkout">Finish Checkout</button>
       </div>
     </main>
     <script src="/script.js"></script>
