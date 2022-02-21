@@ -56,48 +56,54 @@
         </form>
       </div>
       <div class="credit-container">
-        <form class="credit-popup">
-          <p class="subtotal">Subtotal</p>
-          <p class="total">Total</p>
-          <div class="credit-input-container">
-            <input
-              type="text"
-              name="cc-number"
-              id="cc-number"
-              placeholder="Please enter CC#"
-            />
-            <label for="cc-number">Credit Card Number</label>
-            <input type="month" name="exp-date" id="exp-date" />
-            <label for="exp-date">Expiration Date</label>
-            <input
-              type="text"
-              name="cv-code"
-              id="cv-code"
-              placeholder="Please enter CV code"
-            />
-            <label for="cv-code">CV Code</label>
-          </div>
-          <div class="cash-input-container">
-            <p class="change">Cash</p>
-            <input
-              class="change-input"
-              type="text"
-              name="change"
-              id="change"
-              placeholder="Enter Cash Amount"
-            />
-          </div>
-          <button class="payment-button">Submit Payment</button>
-        </form>
+        <div class="credit-flexbox">
+          <form class="credit-popup">
+            <p class="credit-container-subtotal">Subtotal</p>
+            <p class="credit-container-total">Total</p>
+            <div class="credit-input-container">
+              <input
+                type="text"
+                name="cc-number"
+                id="cc-number"
+                placeholder="Please enter CC#"
+              />
+              <label for="cc-number">Credit Card Number</label>
+              <input type="month" name="exp-date" id="exp-date" />
+              <label for="exp-date">Expiration Date</label>
+              <input
+                type="text"
+                name="cv-code"
+                id="cv-code"
+                placeholder="Please enter CV code"
+              />
+              <label for="cv-code">CV Code</label>
+            </div>
+            <div class="cash-input-container">
+              <p class="change">Cash</p>
+              <input
+                class="change-input"
+                type="text"
+                name="change"
+                id="change"
+                placeholder="Enter Cash Amount"
+              />
+            </div>
+            <button class="payment-button">Submit Payment</button>
+          </form>
+        </div>
       </div>
       <div class="receipt-page">
-        <p class="thank-you"></p>
-        <div class="lineitems-container"></div>
-        <p class="subtotal">Subtotal</p>
-        <p class="total">Total</p>
-        <p class="change-final">Your change is</p>
-        <p class="thank-you-receipt">Thank you for your purchase</p>
-        <button class="finish-checkout">Finish Checkout</button>
+        <div class="receipt-page-flex">
+          <p class="thank-you"></p>
+          <div class="lineitems-container"></div>
+          <div class="receipt-page-paragraphs">
+            <p class="receipt-subtotal">Subtotal</p>
+            <p class="receipt-total">Total</p>
+            <p class="change-final">Your change is</p>
+            <p class="thank-you-receipt">Thank you for your purchase</p>
+          </div>
+          <button class="finish-checkout">Finish Checkout</button>
+        </div>
       </div>
     </main>
     <script src="/script.js"></script>

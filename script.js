@@ -92,6 +92,14 @@ const addToCart = document.querySelector("header");
 const cartIcon = document.querySelector(".cart.icon");
 const paragraphSubtotal = document.querySelector(".subtotal");
 const paragraphTotal = document.querySelector(".total");
+const paragraphCheckoutTotal = document.querySelector(
+  ".credit-container-total"
+);
+const paragraphCheckoutSubtotal = document.querySelector(
+  ".credit-container-subtotal"
+);
+const paragraphReceiptTotal = document.querySelector(".receipt-total");
+const paragraphReceiptSubtotal = document.querySelector(".receipt-subtotal");
 const finishedCheckOut = document.querySelector("main");
 const creditContainer = document.querySelector(".credit-container");
 const receiptPage = document.querySelector(".receipt-page");
@@ -148,6 +156,7 @@ addToCart.addEventListener("click", (e) => {
     paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
     paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
   }
+  console.log(`listener from line 138: ${total}`);
 });
 
 checkoutContainer.addEventListener("submit", (e) => {
@@ -166,33 +175,37 @@ checkoutContainer.addEventListener("submit", (e) => {
   if (e.target.classList.contains("checkout-popup")) {
     console.log(e.target);
     creditContainer.style.display = "block";
-    cart.forEach((item) => {
-      subtotal += item.price;
-    });
-    total = subtotal * 1.06;
-    paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
-    paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
-    paragraphChange.textContent = `Your change is $${change.toFixed(2)}`;
+    paragraphCheckoutSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    paragraphCheckoutTotal.textContent = `Total: $${total.toFixed(2)}`;
   }
+  console.log(`listener from line 155: ${total}`);
 });
 
 creditContainer.addEventListener("submit", (e) => {
   e.preventDefault();
+  const creditCheckbox = document.querySelector("#credit").checked;
   if (e.target.classList.contains("credit-popup")) {
     console.log(e.target);
     receiptPage.style.display = "block";
-    change = total - parseFloat(changeInput.value);
+    change = parseFloat(changeInput.value) - total;
     console.log(changeInput.value);
     displayItems(cart, lineItems);
-    cart.forEach((item) => {
-      subtotal += item.price;
-    });
-    total = subtotal * 1.06;
-    paragraphSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
-    paragraphTotal.textContent = `Total: $${total.toFixed(2)}`;
-    paragraphChange.textContent = `Your change is $${change.toFixed(2)}`;
+    paragraphReceiptSubtotal.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+    paragraphReceiptTotal.textContent = `Total: $${total.toFixed(2)}`;
+
+    if (creditCheckbox) {
+      paragraphChange.textContent = "";
+    } else {
+      paragraphChange.textContent = `Your change is $${change.toFixed(2)}`;
+    }
   }
+  console.log(`listener from line 181: ${total}`);
+
   // console.log(change);
+});
+
+document.querySelector(".finish-checkout").addEventListener("click", () => {
+  location.reload();
 });
 
 // finishedCheckOut.addEventListener("click", (e) => {
