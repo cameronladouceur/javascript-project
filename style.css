@@ -110,16 +110,37 @@ li {
   flex-wrap: wrap;
   margin-left: 100px;
 }
+.credit-popup {
+  margin: 70px;
+}
 
+.credit-popup p {
+  padding: 15px;
+}
 .credit-container {
   height: 100%;
-  background-color: red;
+
+  background: linear-gradient(
+    90deg,
+    #069e2d 3%,
+    #62350c 3%,
+    #62350c 15%,
+    #069e2d 15%
+  );
   width: 100%;
   position: fixed;
   top: 0px;
   display: none;
 }
-
+.credit-flexbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* .credit-popup {
+ 
+} */
 .checkout-container {
   height: 100%;
   background: linear-gradient(
@@ -137,17 +158,30 @@ li {
 
 .receipt-page {
   height: 100%;
-  background-color: purple;
+  background: linear-gradient(
+    90deg,
+    #069e2d 3%,
+    #62350c 3%,
+    #62350c 15%,
+    #069e2d 15%
+  );
   width: 100%;
   position: fixed;
   top: 0px;
   display: none;
 }
 
-.receipt-page p {
-  position: fixed;
-  font-size: 72px;
-  top: 100px;
+.receipt-page-flex {
+  display: flex;
+  flex-direction: column;
+  margin-left: 80px;
+}
+/* .receipt-page p {
+  font-size: 12px;
+} */
+
+.receipt-page-paragraphs {
+  font-size: 24px;
 }
 
 .hide {
@@ -175,4 +209,21 @@ body button:hover {
   color: black;
   font-family: "Raleway", sans-serif;
   font-weight: 600;
+}
+
+@media only screen and (min-width: 475px) {
+  .item-container {
+    width: 80%;
+    height: 100%;
+    margin-left: 10%;
+  }
+  body {
+    font-weight: 600;
+  }
+  header {
+    width: 100%;
+  }
+  .green-bar {
+    width: 16px;
+  }
 }
