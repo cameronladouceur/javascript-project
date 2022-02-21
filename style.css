@@ -10,6 +10,8 @@ header {
 body {
   background-color: #62350c;
   z-index: 1;
+  font-family: "Raleway", sans-serif;
+  color: #d1d5de;
 }
 
 header {
@@ -26,6 +28,7 @@ h1 {
   justify-content: center;
   align-items: center;
   width: 100%;
+  margin-left: 8px;
 }
 .text-title {
   display: flex;
@@ -50,6 +53,14 @@ img {
 }
 .squirrel-icon {
   color: #d1d5de;
+  height: 50px;
+  width: 50px;
+}
+.acorn-icon {
+  height: 67px;
+  width: 67px;
+  position: relative;
+  top: 10px;
 }
 .brackets {
   font-size: 200%;
@@ -58,6 +69,8 @@ img {
 }
 .cart-icon {
   color: #d1d5de;
+  height: 50px;
+  width: 50px;
 }
 ul {
   display: flex;
@@ -68,7 +81,7 @@ li {
   list-style: none;
 }
 .item-container {
-  margin-left: 35px;
+  margin-left: 25px;
   margin-top: 50%;
   width: 425px;
   height: 100%;
@@ -77,6 +90,25 @@ li {
   background: #d1d5de;
   border-radius: 50px;
   z-index: 0;
+}
+.item-container p {
+  background-color: #069e2d;
+  color: #d1d5de;
+  text-align: center;
+  padding: 3px;
+}
+
+.checkout-popup {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin-left: 100px;
+}
+
+.checkout-images {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 100px;
 }
 
 .credit-container {
@@ -90,7 +122,13 @@ li {
 
 .checkout-container {
   height: 100%;
-  background-color: #069e2d;
+  background: linear-gradient(
+    90deg,
+    #069e2d 3%,
+    #62350c 3%,
+    #62350c 15%,
+    #069e2d 15%
+  );
   width: 100%;
   position: fixed;
   top: 0px;
@@ -98,7 +136,18 @@ li {
 }
 
 .receipt-page {
+  height: 100%;
   background-color: purple;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  display: none;
+}
+
+.receipt-page p {
+  position: fixed;
+  font-size: 72px;
+  top: 100px;
 }
 
 .hide {
@@ -107,4 +156,23 @@ li {
 
 .cart-icon {
   padding: 20px;
+}
+body button {
+  padding: 10px 30px;
+  background-color: #d1d5de;
+  border-radius: 20px;
+  display: inline-block;
+  text-decoration: none;
+  margin-top: 10px;
+  color: #183e10;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
+}
+
+body button:hover {
+  background-color: red;
+  border: 1px solid black;
+  color: black;
+  font-family: "Raleway", sans-serif;
+  font-weight: 600;
 }
